@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 nav ul li{
 	display: inline-block;
 	text-transform: none;
@@ -5,13 +9,16 @@ nav ul li{
     text-align: right;
 		
 }
+.burger{
+    display: none;
 
+}
 header nav ul{
     text-decoration: none;
     text-transform: none;
-    position: relative;
+    position: absolute;
     font-size: 20px;
-    text-align: right;
+    margin-left: 100vh;
 
 }
 nav ul li a {
@@ -24,16 +31,45 @@ nav ul li a:hover{
 }
 header{
     position: fixed;
-    width: 85%;
-    margin-left: 07%;
+    width: 100%;
     border-radius: 10px;
     top: 0px;
     justify-content: center;
-    height: 0px;
+    height: 10px;
 }
+.trait{
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width:840px) {
+    header {
+        padding: 0 300px;
+        margin-top: -50px;
+    }
+    nav ul li{
+        text-transform: none;
+        text-align: right;
+            
+    }
+}
+@media screen and (max-width:840px){
+    header nav label{
+        display: none;
+       margin-left: 80%;
+       margin-top: 20px;
+       font-size: 50px;
+
+    }
+    
+    header nav ul{
+        display:none;
+    }
+}
+
 .Accueil{
     background-color: rgb(87, 86, 91);
-    height: 560px;
+    height: 100vh;
     width:100%;
     top: -50px;
 }
@@ -41,30 +77,63 @@ header{
     height: 250px;
     width: 250px;
     border-radius: 50%;
-    margin-top: -300px;
-    margin-left: 900px;
+    margin-top: 50px;
+    margin-left: 40%;
 
 }
-.Accueil h4{
-    color: rgb(11, 11, 11);
-    padding-top: 200px;
-    padding-left: 250px;
+.Accueil .txt{
+    color: rgb(8, 8, 8);
+    padding-top: 45px;
+    padding-left: 70px;
     font-size: 30px;
+}
+.Accueil .txt p{
+font-size: 30px;
+}
+.contact{
+    margin-top: 5px;
+}
+.contact p{
+    font-size: 20px;
+}
+.reseau{
+    margin-left: 200px;
 }
 .Accueil h1{
     font-size: 50px;
     margin-bottom: -50px;
 }
-.Accueil p{
-    padding-left: 30px;
-    font-size: 17px;
-}
 .Accueil p:hover{
+    color: aliceblue;
+}
+
+
+.fa-square-facebook{
+    font-size: 20px;
+    padding-left: 5px;    color: black;
+}
+.fa-square-facebook:hover{
+    color: aliceblue;
+}
+.fa-square-instagram{
+    font-size: 20px;
+    padding-left: 5px;
+    color: black;
+}
+.fa-square-instagram:hover{
+    color: aliceblue;
+}
+.fa-square-twitter{
+    font-size: 20px;
+    padding-left: 5px;
+    color: black;
+}
+.fa-square-twitter:hover{
     color: aliceblue;
 }
 #A-propos{
     background-color:  rgb(87, 86, 91);;
-    height: 550px;
+    height: 100vh;
     width:100%;
 }
 .tab{
@@ -75,15 +144,21 @@ header{
     margin-top: 15px;
 }
 .grid{
-    
     display: grid;
-    gap: 10px; 
-    grid-template-columns:repeat(2,400px);  
-    padding-left: 25px; 
+    gap: 2%; 
+    grid-template-columns: repeat(2, 1fr);
+    grid-row: auto;
+    padding-left: auto; 
 }
+@media screen and (max-width:840px) {
+.grid{
+    grid-template-columns: repeat(1, 350px);
+}   
+}
+
 #Reference{
     background-color:  rgb(87, 86, 91);;
-    height: 550px;
+    height: 100vh;
     width:100%;
     
 }
@@ -99,6 +174,7 @@ header{
 }
 .ref{
     display: flex;
+    
 }
 .lah{
     padding-left:150px; 
@@ -108,6 +184,20 @@ header{
     padding-left: 170px;
 
 }
+@media screen and (max-width:840px) {
+    .ref{
+        justify-content: center;
+        width: 100%;
+    }
+      .lah{
+        margin-left: -630px;
+        margin-top: -80px;
+      }
+      .kha{
+        margin-top: 290px;
+        margin-left: -430px;
+      }
+        }
 .fa-graduation-cap{
     font-size: 30px;
     padding-left: 180px;
@@ -129,24 +219,109 @@ header{
     padding-left: 180px;
     padding-top: 15px;
 }
-.fa-square-facebook{
-    font-size: 20px;
-    padding-left: 5px;
+
+@media screen and (max-width:840px){
+    
+    header nav ul{
+        text-decoration: none;
+        text-transform: none;
+        position: absolute;
+        font-size: 20px;
+        margin-left: 50vh;
+    
+    }
+     label, #toggle
+{
+    display: block;
 }
-.fa-square-facebook:hover{
-    color: aliceblue;
+ 
+@media  (max-width: 840px)
+{
+    nav
+    {
+        height: 60px;
+    }
+ 
+    nav .trait 
+    {
+        display: none;
+        flex-direction: column;
+        height: 500px;
+        
+    }
+ 
+    nav .trait a {
+        width: 50%;
+    }
+ 
+    label 
+    {
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+    }
+ 
+    #toggle:checked + .trait {
+        display: flex;
+    }
 }
-.fa-square-instagram{
-    font-size: 20px;
-    padding-left: 5px;
+
+    .Accueil{
+        background-color: rgb(87, 86, 91);
+        height: 100vh;
+        width:850px;
+        
+    }
+    .Accueil .img{
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        position: absolute;
+        margin-top: 15%;
+        margin-left: -15%;
+    }
+    .Accueil .contact{
+        margin-left: -5px;
+        margin-top: 20px;
+    }
+    
+    .Accueil .txt{
+        color: rgb(5, 5, 5);
+        margin-top: 15%;
+        margin-left: -40%;
+        font-size: 50px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+    }
+    .Accueil .txt p{
+        margin-left: 30px;
+        margin-top: 25%;
+        font-size: 23px;
+    }
+    #A-propos{
+        background-color:  rgb(87, 86, 91);;
+        height: 100vh;
+        width:850px;
+    }
+    #Reference{
+        background-color:  rgb(87, 86, 91);;
+        height: 100vh;
+        width:850px;
+        
+    }
 }
-.fa-square-instagram:hover{
-    color: aliceblue;
-}
-.fa-square-twitter{
-    font-size: 20px;
-    padding-left: 5px;
-}
-.fa-square-twitter:hover{
-    color: aliceblue;
-}
+@media screen and (max-width:840px){
+    .reseau{
+        font-size: 50px;
+        position: relative;
+        top: -70%;
+        left: -70%;
+        display: block;
+    }
+}    
